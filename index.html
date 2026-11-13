@@ -97,12 +97,16 @@ body{background:linear-gradient(180deg,#fbf7f1 0%,#f4ede5 100%);color:var(--text
  .mobilebar .nav.active{background:#fff2e6;color:#713b1c}
 }
 
+
+/* Contextual quick actions: only show on overview and transactions */
+.top:not([data-view="dashboard"]):not([data-view="transactions"]) .actions{display:none}
+
 </style>
 </head>
 <body>
 <div class="app">
 <aside class="sidebar"><div class="brand"><div class="brandmark">D</div><div><b>DuitPlan</b><small>MONEY, WITH A PLAN</small></div></div><div class="navlabel">YOUR FINANCES</div><button class="nav active" data-view="dashboard"><span class="ico">▦</span>Overview</button><button class="nav" data-view="transactions"><span class="ico">⇄</span>Transactions</button><button class="nav" data-view="budgets"><span class="ico">◫</span>Budgets</button><button class="nav" data-view="debts"><span class="ico">↘</span>Debt planner</button><button class="nav" data-view="goals"><span class="ico">◎</span>Savings goals</button><button class="nav" data-view="reports"><span class="ico">▥</span>Reports</button><div class="navlabel">PREFERENCES</div><button class="nav" data-view="settings"><span class="ico">⚙</span>Settings & backup</button><div class="sidefoot">Private by design<br>Data stays on this device.<br><span id="sideMonth"></span></div></aside>
-<main class="main"><header class="top"><div><div class="eyebrow">PERSONAL FINANCE WORKSPACE</div><h1 id="pageTitle">Your money at a glance</h1><p class="sub" id="todayLine">A clearer view of your money starts here.</p></div><div class="actions"><button class="btn" id="quickExpense">− Add expense</button><button class="btn primary" id="quickIncome">＋ Add income</button></div></header>
+<main class="main"><header class="top" data-view="dashboard"><div><div class="eyebrow">PERSONAL FINANCE WORKSPACE</div><h1 id="pageTitle">Your money at a glance</h1><p class="sub" id="todayLine">A clearer view of your money starts here.</p></div><div class="actions"><button class="btn" id="quickExpense">− Add expense</button><button class="btn primary" id="quickIncome">＋ Add income</button></div></header>
 <section class="view active" id="dashboard">
 <div class="grid stats">
 <div class="card"><div class="statlabel">Available balance</div><div class="statvalue" id="statBalance">RM 0.00</div><div class="statnote">Income minus expenses · all-time</div></div>
@@ -145,7 +149,7 @@ function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&l
 function toast(s){let t=document.getElementById('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
 const expenseCats=['Food & groceries','Transport','Housing & bills','Shopping','Health','Family','Education','Entertainment','Debt payment','Savings','Other'];
 const incomeCats=['Salary','Business','Freelance','Bonus','Investment','Gift','Other'];
-function nav(view){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===view));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===view));const titles={dashboard:'Your money at a glance',transactions:'Transactions',budgets:'Monthly budgets',debts:'Debt planner',goals:'Savings goals',reports:'Money reports',settings:'Settings & backup'};document.getElementById('pageTitle').textContent=titles[view]||'DuitPlan';if(view==='reports')renderReports();window.scrollTo({top:0,behavior:'smooth'})}
+function nav(view){document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===view));document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('active',x.dataset.view===view));document.querySelector('.top').dataset.view=view;const titles={dashboard:'Your money at a glance',transactions:'Transactions',budgets:'Monthly budgets',debts:'Debt planner',goals:'Savings goals',reports:'Money reports',settings:'Settings & backup'};document.getElementById('pageTitle').textContent=titles[view]||'DuitPlan';if(view==='reports')renderReports();window.scrollTo({top:0,behavior:'smooth'})}
 function openModal(title,fields,action,record){modalAction=action;editId=record?.id||null;document.getElementById('modalTitle').textContent=title;document.getElementById('modalFields').innerHTML=fields;document.getElementById('modal').classList.add('open');document.getElementById('modalForm').dataset.action=action;document.getElementById('modalForm').dataset.id=editId||'';if(record){Object.entries(record).forEach(([k,v])=>{let el=document.querySelector('[name="'+k+'"]');if(el)el.value=v})}}
 function closeModal(){document.getElementById('modal').classList.remove('open')}
 function field(label,name,type='text',value='',extra=''){return '<div class="field"><label>'+label+'</label><input name="'+name+'" type="'+type+'" value="'+esc(value)+'" '+extra+' required></div>'}

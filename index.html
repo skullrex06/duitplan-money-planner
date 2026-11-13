@@ -52,6 +52,51 @@ body{background:linear-gradient(180deg,#fbf7f1 0%,#f4ede5 100%);color:var(--text
  .btn,.mobilebar .nav{transition:all .18s ease}
 }
 
+
+/* Distinct header and navigation surfaces */
+.top{
+ background:linear-gradient(125deg,#3b2418 0%,#593622 72%,#704326 100%);
+ color:#fff;
+ padding:24px 26px;
+ border-radius:22px;
+ margin-bottom:24px;
+ box-shadow:0 12px 28px rgba(59,36,24,.16);
+}
+.top .eyebrow{color:#f4bd8e}
+.top h1{color:#fff}
+.top .sub{color:#ead8c9}
+.top .btn:not(.primary){
+ background:rgba(255,255,255,.10);
+ border-color:rgba(255,255,255,.24);
+ color:#fff;
+}
+.top .btn.primary{
+ background:linear-gradient(135deg,#ffb15d,#ed7926);
+ border-color:#ffab52;
+ color:#3b2418;
+ box-shadow:0 5px 15px rgba(237,121,38,.24)
+}
+.mobilebar{
+ background:linear-gradient(105deg,#e97825 0%,#d9651d 100%);
+ border-top:1px solid #c75b19;
+ box-shadow:0 -8px 24px rgba(95,48,20,.12);
+}
+.mobilebar .nav{color:#ffead8}
+.mobilebar .nav .ico{color:#ffead8}
+.mobilebar .nav.active{
+ background:#fff2e6;
+ color:#713b1c;
+ border-radius:13px;
+ box-shadow:0 3px 10px rgba(78,36,12,.13)
+}
+.mobilebar .nav.active .ico{color:#a94f18}
+@media(max-width:680px){
+ .top{padding:20px 17px;border-radius:19px;margin-bottom:20px}
+ .mobilebar{padding-top:8px}
+ .mobilebar .nav{color:#fff0e3}
+ .mobilebar .nav.active{background:#fff2e6;color:#713b1c}
+}
+
 </style>
 </head>
 <body>

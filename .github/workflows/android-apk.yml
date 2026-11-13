@@ -35,6 +35,14 @@ jobs:
         run: npm install
       - name: Generate Android project
         run: npx cap add android
+      - name: Create branded app icon
+        run: |
+          mkdir -p assets
+          sudo apt-get update
+          sudo apt-get install -y imagemagick
+          convert -background none assets/icon.svg -resize 1024x1024 assets/icon.png
+      - name: Generate Android launcher icons
+        run: npx capacitor-assets generate --android --iconBackgroundColor '#3B2418' --iconBackgroundColorDark '#3B2418'
       - name: Sync web app
         run: npx cap sync android
       - name: Build debug APK

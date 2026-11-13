@@ -1,0 +1,11 @@
+{
+  "name": "DuitPlan — Money Planner",
+  "short_name": "DuitPlan",
+  "description": "Private offline-first personal money planner",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#172554",
+  "icons": []
+}

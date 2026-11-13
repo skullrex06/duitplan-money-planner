@@ -2,13 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#172554"><meta name="description" content="Private, offline-first personal money planner.">
+<meta name="theme-color" content="#3B2418"><meta name="description" content="Private, offline-first personal money planner.">
 <link rel="manifest" href="./manifest.webmanifest"><title>DuitPlan — Money Planner</title>
 <style>
 :root{--navy:#172554;--navy2:#243b70;--bg:#f4f6fb;--card:#fff;--text:#172033;--muted:#748099;--line:#e8ecf3;--green:#13845b;--red:#d64c61;--blue:#4668d8;--purple:#8065c8;--shadow:0 8px 28px #1725540b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:230px;background:var(--navy);color:white;padding:26px 16px;display:flex;flex-direction:column;z-index:5}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 30px}.brandmark{width:38px;height:38px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;font-size:21px;font-weight:900}.brand b{display:block;font-size:16px;letter-spacing:.5px}.brand small{color:#aab9dc;font-size:10px;letter-spacing:1.3px}.navlabel{font-size:10px;color:#91a2c8;letter-spacing:1.5px;padding:12px 12px}.nav{display:flex;align-items:center;gap:12px;width:100%;padding:12px;border:0;background:transparent;color:#c8d2e8;text-align:left;border-radius:10px;margin:2px 0;font-weight:600}.nav.active,.nav:hover{background:#ffffff19;color:white}.nav .ico{width:20px;text-align:center;font-size:17px}.sidefoot{margin-top:auto;color:#9eafd1;font-size:11px;line-height:1.7;padding:12px}.main{margin-left:230px;padding:30px 34px 60px;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:25px}.eyebrow{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:1.5px}.top h1{font-size:27px;margin:5px 0 4px;color:var(--navy)}.sub{color:var(--muted);margin:0;font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:white;color:var(--navy);border-radius:10px;padding:10px 14px;font-weight:700;font-size:12px}.btn.primary{background:var(--navy);color:white;border-color:var(--navy)}.btn.danger{color:var(--red)}.view{display:none}.view.active{display:block}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:17px}.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:var(--shadow)}.statlabel{color:var(--muted);font-size:12px;font-weight:700}.statvalue{font-size:25px;font-weight:800;letter-spacing:-.7px;margin:9px 0 4px;color:var(--navy);overflow-wrap:anywhere}.statnote{font-size:11px;color:var(--muted)}.positive{color:var(--green)!important}.negative{color:var(--red)!important}.two{grid-template-columns:1.3fr 1fr}.three{grid-template-columns:repeat(3,1fr)}.cardhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.cardhead h2{font-size:15px;margin:0;color:var(--navy)}.cardhead p{font-size:11px;color:var(--muted);margin:4px 0 0}.linkbtn{border:0;background:none;color:var(--blue);font-size:12px;font-weight:800}.empty{padding:28px 10px;text-align:center;color:var(--muted);font-size:12px}.barrow{display:grid;grid-template-columns:90px 1fr auto;align-items:center;gap:10px;margin:14px 0;font-size:11px}.bartrack{height:8px;border-radius:20px;background:#edf0f6;overflow:hidden}.barfill{height:100%;border-radius:20px;background:var(--blue)}.barvalue{color:var(--muted);font-weight:700}.txrow{display:flex;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--line)}.txrow:last-child{border:0}.txicon{width:36px;height:36px;border-radius:11px;background:#f0f3fa;display:grid;place-items:center;font-size:16px}.txmeta{flex:1;min-width:0}.txmeta b{display:block;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.txmeta small{color:var(--muted);font-size:10px}.txamount{font-size:12px;font-weight:800}.pill{font-size:10px;font-weight:800;padding:5px 8px;border-radius:20px;background:#eef2ff;color:#5267b5}.toolbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px;flex-wrap:wrap}.toolbar h2{font-size:17px;margin:0;color:var(--navy)}.filters{display:flex;gap:8px;flex-wrap:wrap}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:13px}.field label{font-size:10px;font-weight:800;letter-spacing:.7px;color:#69758d}.field input,.field select,.field textarea,.filters input,.filters select{width:100%;border:1px solid #dfe4ee;border-radius:9px;padding:11px 12px;background:white;color:var(--text);outline:none}.field input:focus,.field select:focus,.filters input:focus{border-color:var(--blue)}.filters input,.filters select{width:auto;min-width:130px;padding:9px 11px;font-size:12px}.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:580px}.table th{text-align:left;color:var(--muted);font-size:10px;letter-spacing:.7px;padding:11px;border-bottom:1px solid var(--line)}.table td{padding:13px 11px;border-bottom:1px solid var(--line);font-size:12px}.table tr:last-child td{border:0}.rowactions{display:flex;gap:6px}.mini{border:1px solid var(--line);background:#fff;border-radius:7px;padding:6px 8px;font-size:10px;font-weight:700}.progress{height:9px;background:#edf0f6;border-radius:20px;overflow:hidden;margin:10px 0}.progress span{display:block;height:100%;background:var(--green);border-radius:20px}.goalgrid{grid-template-columns:repeat(3,minmax(0,1fr))}.goal{padding:17px;border:1px solid var(--line);border-radius:12px;margin-bottom:12px}.goal h3{font-size:13px;margin:0}.goal p{font-size:11px;color:var(--muted)}.goal strong{font-size:19px;color:var(--navy)}.modal{position:fixed;inset:0;background:#111b35a8;display:none;align-items:center;justify-content:center;padding:16px;z-index:20}.modal.open{display:flex}.dialog{width:min(520px,100%);max-height:92vh;overflow:auto;background:white;border-radius:17px;padding:22px;box-shadow:0 25px 80px #0003}.dialoghead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.dialoghead h2{font-size:17px;margin:0;color:var(--navy)}.close{border:0;background:#f1f3f8;border-radius:8px;width:32px;height:32px;font-size:19px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.full{grid-column:1/-1}.notice{font-size:11px;color:var(--muted);padding:12px 14px;background:#eef2fb;border-radius:10px;margin:12px 0}.settingsgrid{grid-template-columns:1fr 1fr}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#172554;color:white;padding:12px 18px;border-radius:12px;font-size:12px;box-shadow:0 8px 25px #0003;display:none;z-index:30}.toast.show{display:block}.mobilebar{display:none}
 @media(max-width:1000px){.stats{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.goalgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.sidebar{display:none}.main{margin:0;padding:20px 14px 90px}.top{align-items:flex-start;flex-direction:column}.top h1{font-size:23px}.actions{width:100%}.actions .btn{flex:1}.stats{gap:9px}.card{padding:15px}.statvalue{font-size:21px}.three,.settingsgrid{grid-template-columns:1fr}.goalgrid{grid-template-columns:1fr}.mobilebar{position:fixed;display:flex;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--line);padding:7px 4px calc(7px + env(safe-area-inset-bottom));justify-content:space-around;z-index:10}.mobilebar .nav{width:auto;display:flex;flex-direction:column;gap:2px;padding:6px 9px;margin:0;font-size:9px;color:#7a8499}.mobilebar .nav.active{background:#edf1fb;color:var(--navy)}.mobilebar .ico{font-size:17px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.toolbar{align-items:flex-start;flex-direction:column}.filters{width:100%}.filters input,.filters select{flex:1;min-width:0}}
+
+/* DuitPlan premium orange & dark-brown theme */
+:root{
+ --navy:#3b2418;--navy2:#563522;--bg:#f7f2ec;--card:#fffdfa;
+ --text:#30231c;--muted:#88796f;--line:#eadfd4;
+ --green:#21845b;--red:#d6534d;--blue:#e87924;--purple:#9b6a48;
+ --shadow:0 10px 30px rgba(67,43,27,.075)
+}
+body{background:linear-gradient(180deg,#fbf7f1 0%,#f4ede5 100%);color:var(--text)}
+.sidebar{background:linear-gradient(180deg,#3b2418 0%,#28180f 100%)}
+.brandmark{background:#f28a35;color:#fff;box-shadow:0 5px 16px #f28a3540}
+.brand small{color:#d8b69c}
+.navlabel{color:#bd9679}
+.nav{color:#e6d5c7}
+.nav.active,.nav:hover{background:#f28a3526;color:#fff}
+.top h1,.statvalue,.cardhead h2,.toolbar h2,.goal strong,.dialoghead h2{color:#3b2418}
+.btn{background:#fffdfa;color:#563522;border-color:#eadfd4;border-radius:12px}
+.btn.primary{background:linear-gradient(135deg,#f39a45,#e87520);color:#fff;border-color:#e87520;box-shadow:0 5px 14px #e8752030}
+.btn.primary:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.linkbtn{color:#d96d1e}
+.bartrack,.progress{background:#f0e7dd}
+.barfill{background:linear-gradient(90deg,#f6a34e,#e87520)}
+.progress span{background:linear-gradient(90deg,#f6a34e,#d9681c)}
+.txicon{background:#fff0e2;color:#a95018}
+.pill{background:#fff0df;color:#a65319}
+.field input:focus,.field select:focus,.field textarea:focus,.filters input:focus,.filters select:focus{border-color:#e87924;box-shadow:0 0 0 3px #e879241c}
+.field input,.field select,.field textarea,.filters input,.filters select{background:#fffdfa;border-color:#e8dbce}
+.mini{background:#fffaf4;border-color:#eadfd4;color:#65432e}
+.notice{background:#fff1e3;color:#76543b}
+.dialog{background:#fffdfa;border:1px solid #eadfd4}
+.close{background:#f6ece2;color:#563522}
+.toast{background:#3b2418;border:1px solid #6d4931}
+.mobilebar{background:rgba(255,253,250,.97);backdrop-filter:blur(14px);border-top:1px solid #eadfd4}
+.mobilebar .nav{color:#8b796d}
+.mobilebar .nav.active{background:#fff0e2;color:#a65319}
+.card{border-radius:19px;border-color:#eee3d9;box-shadow:0 8px 26px rgba(67,43,27,.055)}
+.statvalue{letter-spacing:-.8px}
+@media(max-width:680px){
+ .main{background:transparent}
+ .mobilebar .nav.active{border-radius:13px}
+ .btn,.mobilebar .nav{transition:all .18s ease}
+}
+
 </style>
 </head>
 <body>

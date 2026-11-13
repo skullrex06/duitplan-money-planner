@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5A3020"/><stop offset=".55" stop-color="#9B451D"/><stop offset="1" stop-color="#F47716"/></linearGradient>
+ <linearGradient id="wallet" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FF9A27"/><stop offset="1" stop-color="#D94B0B"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFE98A"/><stop offset="1" stop-color="#E9A91C"/></linearGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur in="SourceAlpha" stdDeviation="18"/><feOffset dy="18"/><feComponentTransfer><feFuncA type="linear" slope=".3"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect x="28" y="28" width="968" height="968" rx="220" fill="url(#bg)"/>
+<rect x="48" y="48" width="928" height="928" rx="202" fill="none" stroke="#FFB43C" stroke-width="18"/>
+<path d="M160 260 Q160 205 220 205 H650 Q710 205 710 265 V330 H250 Q160 330 160 420Z" fill="#F7F1DF" opacity=".98"/>
+<rect x="180" y="300" width="660" height="420" rx="90" fill="url(#wallet)" stroke="#6C2C18" stroke-width="22" filter="url(#shadow)"/>
+<path d="M220 360 Q220 340 250 340 H780" fill="none" stroke="#FFD18A" stroke-width="12" stroke-linecap="round" stroke-dasharray="20 22"/>
+<rect x="635" y="435" width="245" height="170" rx="52" fill="#7B321C" stroke="#FFB43C" stroke-width="18"/>
+<circle cx="690" cy="520" r="28" fill="url(#gold)"/>
+<path d="M270 280 H480" stroke="#23945A" stroke-width="22" stroke-linecap="round"/>
+<path d="M300 230 H520" stroke="#23945A" stroke-width="22" stroke-linecap="round"/>
+<circle cx="260" cy="700" r="95" fill="url(#gold)" stroke="#FFF0A8" stroke-width="16"/>
+<text x="260" y="742" text-anchor="middle" font-family="Arial,sans-serif" font-size="115" font-weight="bold" fill="#8A4A14">RM</text>
+<path d="M520 620 L610 545 L680 575 L790 420" fill="none" stroke="#FFF6D8" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M735 420 H790 V475" fill="none" stroke="#FFF6D8" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M490 720 V650 M560 720 V615 M630 720 V575" stroke="#FFF0C7" stroke-width="30" stroke-linecap="round"/>
+<text x="512" y="865" text-anchor="middle" font-family="Arial,sans-serif" font-size="112" font-weight="900" letter-spacing="-5" fill="#FFF8E8">Duit<tspan fill="#FFC247">Plan</tspan></text>
+<path d="M230 900 H794" stroke="#FFB43C" stroke-width="12" stroke-linecap="round"/>
+</svg>

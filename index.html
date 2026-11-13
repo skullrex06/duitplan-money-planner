@@ -98,8 +98,8 @@ body{background:linear-gradient(180deg,#fbf7f1 0%,#f4ede5 100%);color:var(--text
 }
 
 
-/* Contextual quick actions: only show on overview and transactions */
-.top:not([data-view="dashboard"]):not([data-view="transactions"]) .actions{display:none}
+/* Quick actions belong on the dashboard only; Transactions has its own action buttons. */
+.top:not([data-view="dashboard"]) .actions{display:none}
 
 #accountCards{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:680px){#accountCards{grid-template-columns:1fr}}
 
